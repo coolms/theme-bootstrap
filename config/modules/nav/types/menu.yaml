@@ -1,0 +1,19 @@
+type: component
+id: nav_menu
+options:
+    attr:
+        class: navbar-nav
+    item_attr:
+        class: nav-item
+    link_attr:
+        class: nav-link
+    active_attr:
+        class: nav-link active
+    dropdown_attr:
+        class: nav-item dropdown
+    dropdown_toggle_attr:
+        class: nav-link dropdown-toggle
+    dropdown_menu_attr:
+        class: dropdown-menu
+    dropdown_item_attr:
+        class: dropdown-item

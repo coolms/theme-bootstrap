@@ -1,0 +1,18 @@
+{include:`layouts/base.html.dtmpl`}
+    {fill:body}
+        <div class="container py-4">
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <main>
+                        {slot:content}
+                    </main>
+                </div>
+                <div class="col-lg-4">
+                    <aside>
+                        {slot:sidebar}
+                    </aside>
+                </div>
+            </div>
+        </div>
+    {endfill}
+{endinclude}

@@ -1,0 +1,7 @@
+slug: coolms-bootstrap
+name: CoolMS Bootstrap 5 Base
+version: 1.0.0
+author: CoolMS Team
+description: Bootstrap 5 structural base -- forms, nav, layouts, error pages.
+feStack: ssr
+license: MIT

@@ -1,0 +1,9 @@
+type: component
+id: alert
+options:
+    attr:
+        class: alert alert-info
+        role: alert
+    dismissible_attr:
+        class: alert alert-info alert-dismissible fade show
+        role: alert

@@ -1,0 +1,6 @@
+<button
+    type="submit"
+    {loop:field.attr} {var:item.key}="{var:item.value}"{endloop}
+>
+    {var:field.label}
+</button>

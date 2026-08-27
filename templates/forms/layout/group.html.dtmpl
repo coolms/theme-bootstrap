@@ -1,0 +1,12 @@
+{if:group.name}
+<div class="card mb-3{if:group.compact} card-sm{endif}">
+    <div class="card-header"><strong>{var:group.name}</strong></div>
+    <div class="card-body">
+        {if:group.description}<p class="text-muted small">{var:group.description}</p>{endif}
+        {var:group.children raw}
+    </div>
+</div>
+{endif}
+{unless:group.name}
+    {var:group.children raw}
+{endunless}

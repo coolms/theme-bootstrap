@@ -1,0 +1,7 @@
+type: form_type
+id: email
+default_options:
+    attr:
+        class: form-control
+    row_attr:
+        class: mb-3

@@ -1,0 +1,11 @@
+{include:`layouts/base.html.dtmpl`}
+    {fill:body}
+        <div class="d-flex align-items-center justify-content-center min-vh-100 bg-light">
+            <div class="card shadow-sm" style="width: 100%; max-width: 400px;">
+                <div class="card-body p-4">
+                    {slot:content}
+                </div>
+            </div>
+        </div>
+    {endfill}
+{endinclude}

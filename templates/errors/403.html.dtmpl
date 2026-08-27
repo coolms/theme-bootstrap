@@ -1,0 +1,17 @@
+{include:`layouts/base.html.dtmpl`}
+    {fill:content}
+        <div class="container py-5 text-center">
+            <h1 class="display-1 text-muted fw-light">403</h1>
+            <p class="lead mb-4">Access denied</p>
+            {if:user.authenticated}
+                <a href="/" class="btn btn-primary">Go home</a>
+            {endif}
+            {unless:user.authenticated}
+                {if:routes.login}
+                    <a href="{var:routes.login}" class="btn btn-primary">Sign in</a>
+                {endif}
+                <a href="/" class="btn btn-outline-secondary ms-2">Go home</a>
+            {endunless}
+        </div>
+    {endfill}
+{endinclude}

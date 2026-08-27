@@ -1,0 +1,18 @@
+{if:field.type=`textarea`}
+    {include:`forms/textarea.html.dtmpl`}
+{endif}
+{if:field.type=`select`}
+    {include:`forms/select.html.dtmpl`}
+{endif}
+{unless:field.type=`textarea`}
+{unless:field.type=`select`}
+<input
+    type="{var:field.type}"
+    id="{var:field.id}"
+    value="{var:field.value}"
+    {if:field.required}required{endif}
+    {if:field.errors}aria-invalid="true"{endif}
+    {loop:field.attr} {var:item.key}="{var:item.value}"{endloop}
+>
+{endunless}
+{endunless}

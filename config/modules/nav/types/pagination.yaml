@@ -1,0 +1,13 @@
+type: component
+id: nav_pagination
+options:
+    attr:
+        class: pagination
+    item_attr:
+        class: page-item
+    link_attr:
+        class: page-link
+    active_attr:
+        class: page-item active
+    disabled_attr:
+        class: page-item disabled

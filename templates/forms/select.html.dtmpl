@@ -1,0 +1,14 @@
+<select
+    id="{var:field.id}"
+    name="{var:field.name}"
+    {if:field.required}required{endif}
+    {if:field.errors}aria-invalid="true"{endif}
+    {loop:field.attr} {var:item.key}="{var:item.value}"{endloop}
+>
+    {loop:field.choices:choice}
+        <option value="{var:choice.value}"
+            {if:choice.selected}selected{endif}>
+            {var:choice.label}
+        </option>
+    {endloop}
+</select>

@@ -1,0 +1,7 @@
+type: form_type
+id: select
+default_options:
+    attr:
+        class: form-select
+    row_attr:
+        class: mb-3

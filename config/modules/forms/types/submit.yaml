@@ -1,0 +1,7 @@
+type: form_type
+id: submit
+default_options:
+    attr:
+        class: btn btn-primary
+    row_attr:
+        class: d-grid mt-4

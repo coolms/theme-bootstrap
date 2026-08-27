@@ -1,0 +1,8 @@
+<input
+    type="checkbox"
+    id="{var:field.id}"
+    name="{var:field.name}"
+    value="1"
+    {if:field.checked}checked{endif}
+    {loop:field.attr} {var:item.key}="{var:item.value}"{endloop}
+>

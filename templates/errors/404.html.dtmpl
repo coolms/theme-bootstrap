@@ -1,0 +1,9 @@
+{include:`layouts/base.html.dtmpl`}
+    {fill:content}
+        <div class="container py-5 text-center">
+            <h1 class="display-1 text-muted fw-light">404</h1>
+            <p class="lead mb-4">Page not found</p>
+            <a href="/" class="btn btn-primary">Go home</a>
+        </div>
+    {endfill}
+{endinclude}

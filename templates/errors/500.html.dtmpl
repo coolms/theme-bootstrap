@@ -1,0 +1,9 @@
+{include:`layouts/base.html.dtmpl`}
+    {fill:content}
+        <div class="container py-5 text-center">
+            <h1 class="display-1 text-danger fw-light">500</h1>
+            <p class="lead mb-4">Something went wrong</p>
+            <a href="/" class="btn btn-primary">Go home</a>
+        </div>
+    {endfill}
+{endinclude}

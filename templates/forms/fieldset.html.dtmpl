@@ -1,0 +1,10 @@
+<fieldset{loop:field.attr} {var:item.key}="{var:item.value}"{endloop}>
+    {if:field.legend}
+        <legend{loop:field.legend_attr} {var:item.key}="{var:item.value}"{endloop}>
+            {var:field.legend}
+        </legend>
+    {endif}
+    {loop:field.children:child}
+        {include:`forms/form_row.html.dtmpl` field=`child`}
+    {endloop}
+</fieldset>

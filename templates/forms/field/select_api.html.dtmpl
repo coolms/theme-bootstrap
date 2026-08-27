@@ -1,0 +1,21 @@
+<div class="mb-3">
+    <label for="{var:field.alias}" class="form-label">{var:field.label}{if:field.required} <span class="text-danger">*</span>{endif}</label>
+    {if:field.dataSourceUrl}
+    <select class="form-select coolms-api-select{loop:field.errors} is-invalid{endloop}"
+            id="{var:field.alias}" name="{var:field.alias}"
+            {if:field.required}required{endif}{if:field.multiple} multiple{endif}{if:field.readonly} disabled{endif}
+            data-source-url="{var:field.dataSourceUrl}"
+            data-bind-value="{var:field.bindValue}"
+            data-bind-label="{var:field.bindLabel}"
+            data-loading="{var:field.loading}"
+            data-selected="{var:field.value}">
+        <option value="" disabled selected>Loading…</option>
+    </select>
+    {else}
+    {* No remote data source resolved -- degrade to a plain text input. *}
+    <input type="text" class="form-control" id="{var:field.alias}" name="{var:field.alias}"
+           value="{var:field.value}" {if:field.readonly}readonly{endif}>
+    {endif}
+    {include:`forms/field/errors.html.dtmpl`}
+    {if:field.hint}<div class="form-text">{var:field.hint}</div>{endif}
+</div>

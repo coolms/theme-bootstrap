@@ -1,0 +1,12 @@
+type: component
+id: nav_breadcrumbs
+options:
+    nav_attr:
+        aria-label: breadcrumb
+    attr:
+        class: breadcrumb
+    item_attr:
+        class: breadcrumb-item
+    active_attr:
+        class: breadcrumb-item active
+        aria-current: page

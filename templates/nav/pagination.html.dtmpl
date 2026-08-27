@@ -1,0 +1,16 @@
+{if:pages}
+<nav aria-label="Pagination">
+    <ul{loop:config.attr} {var:item.key}="{var:item.value}"{endloop}>
+        {loop:pages:page}
+            <li{loop:config.item_attr} {var:item.key}="{var:item.value}"{endloop}{if:page.isCurrent} {loop:config.active_attr} {var:item.key}="{var:item.value}"{endloop}{endif}{if:page.isDisabled} {loop:config.disabled_attr} {var:item.key}="{var:item.value}"{endloop}{endif}>
+                {if:page.isDisabled}
+                    <span{loop:config.link_attr} {var:item.key}="{var:item.value}"{endloop}>{var:page.label}</span>
+                {endif}
+                {unless:page.isDisabled}
+                    <a{loop:config.link_attr} {var:item.key}="{var:item.value}"{endloop} href="{var:page.href}">{var:page.label}</a>
+                {endunless}
+            </li>
+        {endloop}
+    </ul>
+</nav>
+{endif}

@@ -1,0 +1,7 @@
+type: form_type
+id: form_layout_inline
+default_options:
+    attr:
+        class: row row-cols-lg-auto g-3 align-items-center
+    row_attr:
+        class: col-12

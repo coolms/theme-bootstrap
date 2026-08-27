@@ -1,0 +1,8 @@
+type: form_type
+id: textarea
+default_options:
+    attr:
+        class: form-control
+        rows: 3
+    row_attr:
+        class: mb-3

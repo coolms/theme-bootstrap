@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="{var:content.locale default=`en`}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{var:page.meta.title default=`CoolMS`}</title>
+    {if:page.meta.description}
+        <meta name="description" content="{var:page.meta.description}">
+    {endif}
+    {loop:site.theme.css}
+        <link rel="stylesheet" href="{var:item.url}">
+    {endloop}
+    {slot:head}
+</head>
+<body>
+    {slot:body}
+        <main>
+            {slot:content}
+        </main>
+    {endslot}
+    {loop:site.theme.js}
+        <script src="{var:item.url}" defer></script>
+    {endloop}
+    {slot:scripts}
+</body>
+</html>

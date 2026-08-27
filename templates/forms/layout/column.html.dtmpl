@@ -1,0 +1,3 @@
+<div class="col-md-{var:col.width}">
+    {var:col.children raw}
+</div>

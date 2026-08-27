@@ -1,0 +1,9 @@
+<div class="mb-3{loop:field.errors} is-invalid{endloop}">
+    <label for="{var:field.alias}" class="form-label">{var:field.label}{if:field.required} <span class="text-danger">*</span>{endif}</label>
+    <textarea class="form-control{loop:field.errors} is-invalid{endloop}"
+              id="{var:field.alias}" name="{var:field.alias}"
+              {if:field.required}required{endif}{if:field.readonly} readonly{endif}
+              {if:field.placeholder}placeholder="{var:field.placeholder}"{endif}>{var:field.value}</textarea>
+    {include:`forms/field/errors.html.dtmpl`}
+    {if:field.hint}<div class="form-text">{var:field.hint}</div>{endif}
+</div>

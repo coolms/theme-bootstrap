@@ -1,0 +1,7 @@
+{if:field.errors}
+    {loop:field.errors:error}
+        <div class="invalid-feedback d-block">
+            {var:error.message}
+        </div>
+    {endloop}
+{endif}

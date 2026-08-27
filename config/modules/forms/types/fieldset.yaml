@@ -1,0 +1,7 @@
+type: form_type
+id: fieldset
+default_options:
+    attr:
+        class: border rounded p-3 mb-3
+    legend_attr:
+        class: float-none w-auto px-2 small fw-semibold

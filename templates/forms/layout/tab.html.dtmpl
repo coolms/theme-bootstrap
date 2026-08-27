@@ -1,0 +1,4 @@
+<div>
+    {if:tab.name}<h3>{var:tab.name}</h3>{endif}
+    {var:tab.children raw}
+</div>

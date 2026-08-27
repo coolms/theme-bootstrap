@@ -1,0 +1,8 @@
+<form action="{var:form.action}" method="{var:form.method}" novalidate>
+    <input type="hidden" name="_form_id" value="{var:form.id}">
+    <input type="hidden" name="{var:form.csrf_field}" value="{var:form.csrf}">
+    {var:form.body raw}
+    {if:form.actions}<div class="d-grid gap-2 mt-4" data-form-actions>{var:form.actions raw}</div>{endif}
+    {include:`forms/show_when.js.html.dtmpl`}
+    {include:`forms/select_api.js.html.dtmpl`}
+</form>

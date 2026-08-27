@@ -1,0 +1,7 @@
+<textarea
+    id="{var:field.id}"
+    name="{var:field.name}"
+    {if:field.required}required{endif}
+    {if:field.errors}aria-invalid="true"{endif}
+    {loop:field.attr} {var:item.key}="{var:item.value}"{endloop}
+>{var:field.value}</textarea>

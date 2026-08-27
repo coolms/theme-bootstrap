@@ -1,0 +1,27 @@
+{
+    "name": "coolms/theme-bootstrap",
+    "description": "Bootstrap 5 theme overlay for CoolMS 2.0 — adds Bootstrap classes to base forms and nav templates",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "CoolMS Team"
+        }
+    ],
+    "require": {
+        "php": ">=8.5",
+        "coolms/coolms": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CoolMS\\ThemeBootstrap\\": "src/"
+        }
+    },
+    "extra": {
+        "symfony": {
+            "id": "coolms/theme-bootstrap",
+            "allow-contrib": false
+        }
+    }
+}

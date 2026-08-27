@@ -1,0 +1,6 @@
+<div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="{var:field.alias}"
+           name="{var:field.alias}" value="1"{if:field.value} checked{endif}>
+    <label class="form-check-label" for="{var:field.alias}">{var:field.label}</label>
+    {include:`forms/field/errors.html.dtmpl`}
+</div>

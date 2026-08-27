@@ -1,0 +1,7 @@
+type: form_type
+id: form_layout_card
+default_options:
+    wrapper_attr:
+        class: card shadow-sm
+    body_attr:
+        class: card-body p-4
