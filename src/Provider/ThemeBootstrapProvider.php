@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace CoolMS\ThemeBootstrap\Provider;
 
-use App\Theme\Domain\Provider\ThemeProviderInterface;
+use CoolMS\Core\Theme\ThemeProviderInterface;
 
 /**
  * Registers coolms-bootstrap as a known theme.

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace CoolMS\ThemeBootstrap\Asset;
 
-use App\Theme\Domain\Service\ThemeAssetsProviderInterface;
-use App\Theme\Domain\ValueObject\ThemeAssets;
+use CoolMS\Core\Theme\ThemeAssetsProviderInterface;
+use CoolMS\Core\Theme\ThemeAssets;
 
 /**
  * Serves Bootstrap 5 assets from CDN.
