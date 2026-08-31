@@ -3,7 +3,6 @@
     "description": "Bootstrap 5 theme overlay for CoolMS 2.0 — adds Bootstrap classes to base forms and nav templates",
     "type": "symfony-bundle",
     "license": "MIT",
-    "version": "1.0.0",
     "authors": [
         {
             "name": "CoolMS Team"
