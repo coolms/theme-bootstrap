@@ -21,7 +21,7 @@ use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
  * so Bootstrap-styled form templates override Identity semantic fallbacks.
  *
  * Implements PrependExtensionInterface to append the theme config/modules/
- * directory to coolms.form.scan_directories — scanned after Identity base
+ * directory to coolms.form.scan_directories -- scanned after Identity base
  * configs, so form_type component YAMLs are registered into FormConfigRegistry.
  */
 final class ThemeBootstrapExtension extends Extension implements PrependExtensionInterface
@@ -44,7 +44,7 @@ final class ThemeBootstrapExtension extends Extension implements PrependExtensio
 
     public function load(array $configs, ContainerBuilder $container): void
     {
-        // Template loader — Bootstrap templates override Identity module fallbacks.
+        // Template loader -- Bootstrap templates override Identity module fallbacks.
         // dirname(__DIR__, 2) = .../theme-bootstrap (package root)
         $container->register('dtmpl.module_loader.theme_bootstrap', FilesystemTemplateLoader::class)
             ->setArgument('$basePath', dirname(__DIR__, 2) . '/templates')
