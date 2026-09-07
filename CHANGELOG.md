@@ -20,7 +20,7 @@ this package on its own produced:
 Interface "Symfony\Component\Config\Definition\ConfigurableInterface" not found
 ```
 
-⚠️ **Invisible in any application that installs `symfony/framework-bundle`**,
+!! **Invisible in any application that installs `symfony/framework-bundle`**,
 which pulls `symfony/config` in transitively -- which is every application
 this theme had ever been installed into. Found by resolving the package from
 its tag into an empty tree and then checking that every `use` statement in
@@ -58,7 +58,7 @@ A **structural base**, not a finished look: **33 DTMPL templates** (forms,
 navigation, layouts, error pages) with Bootstrap 5 classes on them, 15 config
 files, and 4 PHP classes -- a bundle, its extension, and the manifest glue.
 
-⚠️ **It ships no `pages/` templates, so it is meant to be extended rather
+!! **It ships no `pages/` templates, so it is meant to be extended rather
 than assigned.** Assigning it directly to a site takes the public front end
 to a 500: *fallback template `pages/page.html.dtmpl` not found*. Use
 `coolms/theme-default`, or a theme of your own with `extends:

@@ -11,6 +11,13 @@
         <link rel="stylesheet" href="{var:item.url}">
     {endloop}
     {slot:head}
+    {comment}
+      The `{css}` declared by the partials this page reaches, gathered before
+      the render and written once. Last in the head so a partial's own rules
+      outrank the theme's general ones on a tie -- see the same block in
+      `theme-coolms-site`.
+    {endcomment}
+    {var:_assets.css}
 </head>
 <body>
     {slot:body}
@@ -21,6 +28,7 @@
     {loop:site.theme.js}
         <script src="{var:item.url}" defer></script>
     {endloop}
+    {var:_assets.js}
     {slot:scripts}
 </body>
 </html>
