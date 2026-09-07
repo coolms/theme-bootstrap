@@ -20,7 +20,7 @@
     {if:hasChildren}
       <li{loop:config.dropdown_attr} {var:item.key}="{var:item.value}"{endloop}>
         <a{loop:config.dropdown_toggle_attr} {var:item.key}="{var:item.value}"{endloop}
-           href="{var:node.href}"
+           href="{var:node.href href}"
            data-bs-toggle="dropdown"
            aria-expanded="false"
            {if:node.isCurrentPage}aria-current="page"{endif}>
@@ -32,7 +32,7 @@
             {if:hasGrandchildren}
               <li class="dropdown-submenu">
                 <a class="dropdown-item dropdown-toggle{if:child.isCurrentPage} active{endif}"
-                   href="{var:child.href}"
+                   href="{var:child.href href}"
                    {if:child.target}target="{var:child.target}"{endif}
                    {if:child.isExternal}rel="noopener noreferrer"{endif}
                    {if:child.isCurrentPage}aria-current="page"{endif}>
@@ -42,7 +42,7 @@
                   {loop:child.children:grandchild}
                     <li>
                       <a class="dropdown-item{if:grandchild.isCurrentPage} active{endif}"
-                         href="{var:grandchild.href}"
+                         href="{var:grandchild.href href}"
                          {if:grandchild.target}target="{var:grandchild.target}"{endif}
                          {if:grandchild.isExternal}rel="noopener noreferrer"{endif}
                          {if:grandchild.isCurrentPage}aria-current="page"{endif}>
@@ -56,7 +56,7 @@
             {unless:hasGrandchildren}
               <li>
                 <a class="dropdown-item{if:child.isCurrentPage} active{endif}"
-                   href="{var:child.href}"
+                   href="{var:child.href href}"
                    {if:child.target}target="{var:child.target}"{endif}
                    {if:child.isExternal}rel="noopener noreferrer"{endif}
                    {if:child.isCurrentPage}aria-current="page"{endif}>
@@ -72,7 +72,7 @@
       <li{loop:config.item_attr} {var:item.key}="{var:item.value}"{endloop}>
         <a{if:node.isActive}{loop:config.active_attr} {var:item.key}="{var:item.value}"{endloop}{endif}
            {unless:node.isActive}{loop:config.link_attr} {var:item.key}="{var:item.value}"{endloop}{endunless}
-           href="{var:node.href}"
+           href="{var:node.href href}"
            {if:node.target}target="{var:node.target}"{endif}
            {if:node.isExternal}rel="noopener noreferrer"{endif}
            {if:node.isCurrentPage}aria-current="page"{endif}>
