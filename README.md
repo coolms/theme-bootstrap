@@ -45,10 +45,8 @@ your own domain.
 
 | file | bytes |
 |---|---|
-| `public/css/bootstrap.min.css` | 232,803 |
-| `public/css/bootstrap.min.css.map` | 589,892 |
-| `public/js/bootstrap.bundle.min.js` | 80,721 |
-| `public/js/bootstrap.bundle.min.js.map` | 332,090 |
+| `public/css/bootstrap.min.css` | 232,757 |
+| `public/js/bootstrap.bundle.min.js` | 80,672 |
 | `public/LICENSE-bootstrap.txt` | MIT |
 
 **It used to come from `cdn.jsdelivr.net`, and that was a defect rather than a
@@ -61,14 +59,26 @@ mechanism with a different host. Self-hosting removes the transfer instead of
 disclosing it, and a theme installed by other people should not make that
 decision on their behalf.
 
-The four files are byte-identical to the official Bootstrap 5.3.3 dist,
-verified against three independent origins -- jsdelivr, unpkg, and the GitHub
-release archive -- with identical SHA-256 on all four. The source maps are
-included so the `sourceMappingURL` comments at the end of both minified files
-resolve rather than 404 in devtools.
+The two files are the official Bootstrap 5.3.3 dist with one line removed from
+each: the trailing `sourceMappingURL` comment. **What remains is a byte-exact
+PREFIX of upstream** -- 232,757 of 232,803 bytes for the CSS, 80,672 of 80,721
+for the JS -- so the original verification still holds and is still checkable:
+take the upstream file, cut it at that length, and the digests match. Upstream
+was verified against three independent origins (jsdelivr, unpkg, and the GitHub
+release archive) with identical SHA-256 before anything was removed, and that
+version is in this repository's history.
 
-To move to a newer Bootstrap, replace the four files, update the version named
-here, and re-run the publish step. Nothing else references the version.
+**No source maps ship, and the `sourceMappingURL` comments are removed with
+them.** A `.map` carries `sourcesContent` -- the original SCSS and JS verbatim,
+comments included -- and publishing one puts 900 KB of upstream source into
+every install to serve a devtools convenience almost nobody uses on a
+dependency. Removing the comments as well is what stops a consumer's browser
+requesting a file that is not there. Anyone debugging Bootstrap itself should
+fetch the maps from upstream, where they are maintained.
+
+To move to a newer Bootstrap, replace the two files, strip the trailing
+`sourceMappingURL` line from each, update the sizes and the version named here,
+and re-run the publish step. Nothing else references the version.
 
 ## What it is
 

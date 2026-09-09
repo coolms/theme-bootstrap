@@ -31,11 +31,23 @@ use CoolMS\Core\Theme\ThemeAssetsProviderInterface;
  * appends. A child can ADD an asset; nothing lets it remove one. So the only
  * routes were changing this file or ceasing to extend the theme.
  *
- * The files are byte-identical to the Bootstrap 5.3.3 dist, verified against
- * three independent origins (jsdelivr, unpkg, and the GitHub release zip) --
- * identical sha256 on all four, including the source maps, which are shipped
- * so the `sourceMappingURL` comments at the end of both minified files still
- * resolve. MIT licence in `public/LICENSE-bootstrap.txt`.
+ * The two files are the Bootstrap 5.3.3 dist with one line removed from each:
+ * the trailing `sourceMappingURL` comment. What remains is a byte-exact PREFIX
+ * of upstream -- 232,757 of 232,803 bytes, and 80,672 of 80,721 -- so the
+ * original verification still holds and stays checkable: cut the upstream file
+ * at that length and the digests match. Upstream was checked against three
+ * independent origins (jsdelivr, unpkg, the GitHub release zip) with identical
+ * sha256 before anything was removed, and that version is in this repository's
+ * history. MIT licence in `public/LICENSE-bootstrap.txt`.
+ *
+ * !! NO SOURCE MAPS SHIP, AND THE COMMENTS GO WITH THEM. A `.map` carries
+ * `sourcesContent` -- the original source verbatim -- so publishing one puts
+ * 900 KB of upstream source into every install for a devtools convenience
+ * almost nobody uses on a dependency. The publish guard blocks it with a rule
+ * that has no waiver key, deliberately: a map also defeats path-scoped
+ * allowances, because a string allowed in one file reappears inside the map of
+ * that file where no allowance is scoped. Removing the comments too is what
+ * stops a consumer's browser requesting a file that is not there.
  *
  * !! Built from `$assetsUrl` rather than a literal `/themes/coolms-bootstrap`:
  * the resolver passes each chain entry its OWN assets URL, and a hardcoded

@@ -34,11 +34,24 @@ asked.
 `ThemeChainAssetsResolver` walks the chain parent-first and appends, so a child
 theme can ADD an asset and never remove one.
 
-The four files are byte-identical to the official Bootstrap 5.3.3 dist,
-verified against three independent origins (jsdelivr, unpkg, and the GitHub
-release archive) with identical SHA-256 on all four. Source maps are included
-so the `sourceMappingURL` comments at the end of both minified files resolve
-instead of 404ing in devtools. MIT licence in `public/LICENSE-bootstrap.txt`.
+Two files ship, not four. The two files are the official Bootstrap 5.3.3 dist with one line removed from
+each: the trailing `sourceMappingURL` comment. **What remains is a byte-exact
+PREFIX of upstream** -- 232,757 of 232,803 bytes for the CSS, 80,672 of 80,721
+for the JS -- so the original verification still holds and is still checkable:
+take the upstream file, cut it at that length, and the digests match. Upstream
+was verified against three independent origins (jsdelivr, unpkg, and the GitHub
+release archive) with identical SHA-256 before anything was removed, and that
+version is in this repository's history. MIT licence in
+`public/LICENSE-bootstrap.txt`.
+
+!! **NO SOURCE MAPS, AND THE `sourceMappingURL` COMMENTS GO WITH THEM.** They
+were shipped at first so those comments resolved. A `.map` carries
+`sourcesContent` -- the original source verbatim, comments included -- so
+publishing one puts 900 KB of upstream source into every install for a devtools
+convenience almost nobody uses on a dependency, and the publish guard blocks it
+outright with a rule that has no waiver key. Removing the comments as well is
+what stops a consumer's browser requesting a file that is not there. Anyone
+debugging Bootstrap itself should fetch the maps from upstream.
 
 `ThemeBootstrapProvider::$assetsPath` and `$assetsUrl` are no longer empty
 strings -- they were correct while the theme owned no files and wrong the
