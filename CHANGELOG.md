@@ -6,7 +6,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Versioning is described in `CONTRIBUTING.md` -- read it before assuming what a
 major number means here.
 
-## Unreleased
+## 2.0.0-alpha4 - 2026-09-09
 
 ### Changed: Bootstrap is served from this package, not from `cdn.jsdelivr.net`
 
@@ -56,6 +56,18 @@ debugging Bootstrap itself should fetch the maps from upstream.
 `ThemeBootstrapProvider::$assetsPath` and `$assetsUrl` are no longer empty
 strings -- they were correct while the theme owned no files and wrong the
 moment it does.
+
+### Added
+
+- The base layout emits the `{css}` and `{js}` blocks gathered from the page and
+  its widgets.
+
+### Changed
+
+- Navigation URLs are filtered through `href`.
+- Source maps are no longer shipped, and the comments asking for them are gone.
+- Comments and changelogs are ascii; development-only files are export-ignored,
+  and the readme no longer describes a test suite this package does not have.
 
 ## 2.0.0-alpha3 - 2026-09-03
 
