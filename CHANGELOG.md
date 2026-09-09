@@ -6,6 +6,23 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Versioning is described in `CONTRIBUTING.md` -- read it before assuming what a
 major number means here.
 
+## 2.0.0-alpha5 - 2026-09-10
+
+### Fixed
+
+**The floor on `coolms/dtmpl` was a version too low, and the failure it allowed
+is silent.** These templates use `{css}` and `{js}` asset blocks and the `href`
+filter, both of which arrived in dtmpl 2.1.0: at v2.0.0 the asset AST nodes do
+not exist at all, and there is no filter named `href`.
+
+Under the older engine a `{css}` block is not syntax -- it is ordinary text, so
+the stylesheet is emitted **into the page body** instead of being gathered into
+the head, and `href` is an unknown filter. No exception, no warning, just a
+wrong page. That is why this belongs in the constraint rather than in a test:
+nothing downstream would have reported it.
+
+Nothing else changes. Same templates, one constraint.
+
 ## 2.0.0-alpha4 - 2026-09-09
 
 ### Changed: Bootstrap is served from this package, not from `cdn.jsdelivr.net`
