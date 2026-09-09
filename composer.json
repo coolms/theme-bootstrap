@@ -10,7 +10,7 @@
     ],
     "require": {
         "coolms/core": "^2.0",
-        "coolms/dtmpl": "^2.0",
+        "coolms/dtmpl": "^2.1",
         "php": ">=8.5",
         "symfony/config": "^8.0",
         "symfony/dependency-injection": "^8.0",
