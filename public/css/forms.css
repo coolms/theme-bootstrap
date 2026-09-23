@@ -1,0 +1,24 @@
+/*
+ * This theme's own rules, on top of the Bootstrap dist beside it.
+ *
+ * !! IT EXISTS BECAUSE A WRAPPER CLASS IS NOT A REASON TO FORK A TEMPLATE.
+ * This theme used to ship its own copy of the platform's form shell --
+ * `templates/forms/form_render.html.dtmpl` -- differing from it by one line:
+ * the element and class around the buttons, `<div class="d-grid gap-2 mt-4">`
+ * instead of `<footer class="cms-form__actions">`.
+ *
+ * That copy was the whole platform's form shell, because this theme is the
+ * parent of every product theme here, so every form on every site rendered
+ * through it -- including the hidden field that gets a CSRF token validated.
+ * A fix to the platform's shell would have reached no form anywhere, and
+ * nothing would have said so.
+ *
+ * The copy is gone and the difference is here, where a difference in
+ * presentation belongs. The three declarations are what Bootstrap's
+ * `d-grid gap-2 mt-4` resolved to, so a form renders as it did before.
+ */
+.cms-form__actions {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
