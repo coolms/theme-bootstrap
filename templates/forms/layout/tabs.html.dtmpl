@@ -1,3 +1,0 @@
-<div>
-    {var:tabs.children raw}
-</div>

@@ -57,6 +57,18 @@ final class StaticThemeAssetsProvider implements ThemeAssetsProviderInterface
 {
     private const string BOOTSTRAP_CSS = '/css/bootstrap.min.css';
 
+    /**
+     * This theme's own rules, after the dist so they win.
+     *
+     * !! IT CARRIES WHAT USED TO BE A FORKED TEMPLATE. This theme shipped a copy
+     * of the platform's form shell that differed by one line -- the element and
+     * class around the buttons -- and, being the parent of every product theme,
+     * that copy was what every form on every site rendered through. A wrapper
+     * class is presentation, so it lives in a stylesheet now and the fork is
+     * gone. See `public/css/forms.css`.
+     */
+    private const string THEME_CSS = '/css/forms.css';
+
     private const string BOOTSTRAP_JS = '/js/bootstrap.bundle.min.js';
 
     public string $slug { get => 'coolms-bootstrap'; }
@@ -66,7 +78,10 @@ final class StaticThemeAssetsProvider implements ThemeAssetsProviderInterface
         $base = rtrim($assetsUrl, '/');
 
         return new ThemeAssets(
-            css: [['url' => $base . self::BOOTSTRAP_CSS]],
+            css: [
+                ['url' => $base . self::BOOTSTRAP_CSS],
+                ['url' => $base . self::THEME_CSS],
+            ],
             js: [['url' => $base . self::BOOTSTRAP_JS]],
         );
     }
