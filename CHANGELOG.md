@@ -6,6 +6,18 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Versioning is described in `CONTRIBUTING.md` -- read it before assuming what a
 major number means here.
 
+## Unreleased
+
+### Fixed
+
+- A field's `id`, and its label's `for`, name the form as well as the field:
+  they read `field.id` when the form renderer provides it (the form's id, then
+  the field's alias). Two forms on one page with a field of the same name -- a
+  confirmation form and its resend form, say -- no longer give two elements one
+  id, and a label no longer points at the other form's field. Where the
+  renderer provides no `field.id`, the alias stays the id, as before. `name` is
+  unchanged, so what a form posts does not change.
+
 ## 2.0.0-alpha6 - 2026-10-07
 
 ### Added
