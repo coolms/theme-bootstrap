@@ -8,6 +8,9 @@ on:
   # Monday rather than inside someone's pull request.
   schedule:
     - cron: '0 6 * * 1'
+  # By hand as well: a merge to develop once produced no push run at all (2026-10-22), and a release is tagged only
+  # on a green develop.
+  workflow_dispatch:
 
 permissions:
   contents: read
