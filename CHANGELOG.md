@@ -6,6 +6,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Versioning is described in `CONTRIBUTING.md` -- read it before assuming what a
 major number means here.
 
+## Unreleased
+
+### Changed
+
+- A text, email or password field states its words for assistive technology: the input names its hint and its
+  refusals in `aria-describedby`, is `aria-invalid` when the server refused it, and takes the definition's
+  `minLength`, `maxLength` and `pattern` as the browser's attributes (`forms/field/constraints.html.dtmpl` and
+  `forms/field/described.html.dtmpl` from the platform). A field's refusals are one block under it, with an id.
+- A password field has a show/hide button in its input group: a real button with `aria-pressed` and the server's two
+  labels, hidden until the platform's `password-reveal.js` runs.
+
 ## 2.0.0-alpha7 - 2026-10-22
 
 ### Fixed

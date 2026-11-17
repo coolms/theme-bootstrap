@@ -1,3 +1,1 @@
-{loop:field.errors:error}
-    <div class="invalid-feedback">{var:error}</div>
-{endloop}
+{comment}A field's refusals from the server, under the field; the input names this block in aria-describedby.{endcomment}{if:field.errors}<div class="invalid-feedback d-block" id="{var:field.id}-error">{loop:field.errors:error}<div>{var:error}</div>{endloop}</div>{endif}
