@@ -23,8 +23,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Compare theme.yaml with the latest release tag
-        run: node tools/theme-version-check.mjs theme.yaml --tag "$(git describe --tags --abbrev=0 2>/dev/null)"
+      - name: Compare theme.yaml with the latest release tag and the version under way
+        run: node tools/theme-version-check.mjs theme.yaml --tag "$(git describe --tags --abbrev=0 2>/dev/null)" --changelog CHANGELOG.md
 
   install:
     name: PHP ${{ matrix.php }} ${{ matrix.deps }}
