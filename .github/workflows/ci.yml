@@ -16,6 +16,16 @@ permissions:
   contents: read
 
 jobs:
+  theme-version:
+    name: theme.yaml version is the latest release tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Compare theme.yaml with the latest release tag
+        run: node tools/theme-version-check.mjs theme.yaml --tag "$(git describe --tags --abbrev=0 2>/dev/null)"
+
   install:
     name: PHP ${{ matrix.php }} ${{ matrix.deps }}
     runs-on: ubuntu-latest
